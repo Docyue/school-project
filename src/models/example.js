@@ -1,3 +1,4 @@
+import key from 'keymaster';
 
 export default {
 
@@ -6,6 +7,9 @@ export default {
   state: {},
 
   subscriptions: {
+    keyboardWatcher({ dispatch }) {
+      key('⌘+up, ctrl+up', () => { dispatch({type:'add'}); });
+    },
     setup({ dispatch, history }) {  // eslint-disable-line
     },
   },
